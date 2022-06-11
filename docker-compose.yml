@@ -1,5 +1,24 @@
 version: '3'
 services:
+#    postgres:
+#        image: postgres:14.3-alpine
+#        ports:
+#            - "5432:5432"
+#        environment:
+#            POSTGRES_PASSWORD: mypassword
+#        volumes:
+#            - ./postgresql/data:/var/lib/postgresql/data
+    backend:
+        build:
+            context: ./backend
+            dockerfile: Dockerfile.dev
+        volumes:
+            - /app/node_modules
+            - ./backend/config:/app/config
+            - ./backend/src:/app/src
+            #- ./backend/test:/app/test
+        ports:
+            - "3000:3000"
     ui:
         build:
             context: ./ui
