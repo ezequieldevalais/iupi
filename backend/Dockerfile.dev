@@ -6,7 +6,9 @@ WORKDIR /app
 COPY tsconfig.json /app/tsconfig.json
 COPY package.json /app/package.json
 COPY package-lock.json /app/package-lock.json
-COPY .env /app/.env
+
+# development configuration
+COPY src/config/.env.dev /app/.env
 
 RUN npm install
 
