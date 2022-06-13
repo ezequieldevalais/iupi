@@ -1,18 +1,16 @@
-import express, { Express, Request, Response } from 'express';
-const config = require( "../config" );
+import express, { Express } from 'express';
+import { router } from '../routes';
+import { config } from '../config'
 
-class ExpressLoader {
+
+export class ExpressLoader {
     constructor () {
         const app: Express = express();
         const port = config.port;
+        app.use('/',router);
 
-        app.get('/', (req: Request, res: Response) => {
-            res.send('Express + TypeScript Server is running');
-        });
         app.listen(port, () => {
             console.log(`⚡️[server]: Server is running at https://localhost:${port}`);
         });
     }
 }
-
-module.exports = ExpressLoader;

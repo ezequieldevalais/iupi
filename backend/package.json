@@ -6,7 +6,9 @@
   "scripts": {
     "build": "npx tsc",
     "start": "node dist/index.js",
-    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\""
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\"",
+    "lint": "eslint . --ext .ts"
+
   },
   "keywords": [],
   "author": "",
@@ -18,8 +20,11 @@
   "devDependencies": {
     "@types/express": "^4.17.13",
     "@types/node": "^17.0.42",
+    "@typescript-eslint/eslint-plugin": "^5.27.1",
+    "@typescript-eslint/parser": "^5.27.1",
     "chai": "^4.3.6",
     "concurrently": "^7.2.1",
+    "eslint": "^8.17.0",
     "mocha": "^10.0.0",
     "nodemon": "^2.0.16",
     "nyc": "^15.1.0",

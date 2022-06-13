@@ -4,6 +4,8 @@ RUN mkdir -p /app/dist /app/src
 
 WORKDIR /app
 COPY tsconfig.json /app/tsconfig.json
+COPY .eslintrc /app/.eslintrc
+COPY .eslintignore /app/.eslintignore
 COPY package.json /app/package.json
 COPY package-lock.json /app/package-lock.json
 
