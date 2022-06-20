@@ -1,9 +1,9 @@
-import { Router } from 'express';
-import { BaseController } from '../controllers/BaseController';
+import { Router } from 'express'
+import { BaseController } from '../controllers/BaseController'
 
-export const baseRouter = Router();
+export const baseRouter = Router()
 
-const baseController = new BaseController();
+const baseController = new BaseController()
 
 /*userRouter.post('/new', 
   middleware.useCORS,
@@ -13,5 +13,5 @@ const baseController = new BaseController();
   (req, res) => createUserController.execute(req, res)
 );
 */
-  
-baseRouter.get('/', (req, res) => baseController.landingMessage(req,res) );
+
+baseRouter.get('/', (req, res) => baseController.landingMessage(req, res))

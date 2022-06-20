@@ -6,8 +6,12 @@ services:
             - "5433:5432"
         environment:
             POSTGRES_PASSWORD: mypassword
+            POSTGRES_USER: postgres
+            POSTGRES_DB: iupidb
         volumes:
             - ./postgresql/data:/var/lib/postgresql/data
+            - ./backend/src/migrations/dbinit.sql:/docker-entrypoint-initdb.d/dbinit.sql
+
     backend:
         build:
             context: ./backend
@@ -25,4 +29,4 @@ services:
             - /app/node_modules
             - ./ui:/app
         ports:
-            - "8080:3000"
+            - "8080:3000"  

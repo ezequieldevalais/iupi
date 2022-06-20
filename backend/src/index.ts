@@ -1,3 +1,3 @@
-import { ExpressLoader } from "./loaders/Express";
+import { ExpressLoader } from './loaders/Express'
 
-new ExpressLoader(); 
+new ExpressLoader()
