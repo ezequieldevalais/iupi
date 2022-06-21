@@ -6,4 +6,5 @@ export class BaseController {
         res.type('application/json')
         return res.status(200).json({ result: 'todo ok' })
     }
+    
 }
